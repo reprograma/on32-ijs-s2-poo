@@ -11,10 +11,9 @@ Antes de começar, vamos organizar nosso setup.
 * Fork esse repositório 
 * Clone o fork na sua máquina (Para isso basta abrir o seu terminal e digitar `git clone url-do-seu-repositorio-forkado`)
 * Entre na pasta do seu repositório (Para isso basta abrir o seu terminal e digitar `cd nome-do-seu-repositorio-forkado`)
-* [Add outras intrucoes caso necessario]
 
 ### Objetivo
-[COLOQUE AQUI O OBJETIVO DA SUA AULA]
+
 
 ### Resumo
 O que veremos na aula de hoje?
@@ -40,7 +39,7 @@ O que veremos na aula de hoje?
 
 # Conteúdo
 
-## Exemplo  
+## Orientação a Objetos  
   #### O que são e para que servem
   [CONTEUDO]
 
@@ -53,21 +52,13 @@ O que veremos na aula de hoje?
   #### Implementação
   [CONTEUDO]
 
-## Outro Exemplo
-   #### ETCETC
-   [CONTEUDO]
 
 
-***
 ### Exercícios 
-* [Exercicio para sala](/exercicios/para-sala/)
-* [Exercicio para casa](/exercicios/para-casa/)
-
 ### Material da aula 
 * [Material](/material)
 
 ### Links Úteis
-* 
 
 <p align="center">
 Desenvolvido com :purple_heart:  
