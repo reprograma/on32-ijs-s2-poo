@@ -16,7 +16,7 @@ Antes de começar, vamos organizar nosso setup.
 
 
 ### Resumo
-O que veremos na aula de hoje?
+Hoje veremos os 4 pilares da Orientação a Objetos
 - [Tema da Aula](#tema-da-aula)
     - [Instruções](#instruções)
     - [Objetivo](#objetivo)
