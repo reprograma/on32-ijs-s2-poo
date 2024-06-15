@@ -21,6 +21,20 @@ const produto = new Produto()*/
 
 // forma abreviada
 export class Produto implements ProdutoInterface{
+    protected estoque: number = 0
+    public estaDisponivel(): boolean{
+        return this.estoque > 0
+    }
     public tipo: ProdutoTipoEnum = ProdutoTipoEnum.FISICO;
-    constructor(public nome: string, public preco: number, public descricao: string){}
+    get descricao(): string{
+        return this._descricao
+    }
+    constructor(public nome: string, public preco: number, protected _descricao: string){}
 }
+
+
+
+//public: qualquer um pode acessar, classes filhas ou a partir de uma variável
+//privado: somente a classe pode acessar
+//protected: somente a classe e suas variaveis (extends) pode acessar
+// _ é pra dizer que essa propriedade é privada ou protegida.

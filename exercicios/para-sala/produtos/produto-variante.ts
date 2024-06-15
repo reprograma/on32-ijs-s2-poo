@@ -7,9 +7,17 @@ export class ProdutoVariante extends Produto {
     constructor(
       public nome: string,
       public preco: number,
-      public descricao: string,
+      protected _descricao: string,
       public cor: string
     ) {
-      super(nome, preco, descricao);
+      super(nome, preco, _descricao);
+    }
+    
+    //geter
+    //override
+    get descricao(): string{
+        return "morango"
     }
   }
+
+ 
