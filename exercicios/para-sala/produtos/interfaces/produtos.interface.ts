@@ -5,7 +5,9 @@ export interface ProdutoInterface{
     preco: number
     nome: string
     tipo: ProdutoTipoEnum
+    cor: string
     estaDisponivel: () => Boolean
+    
 }
 
 //contrato

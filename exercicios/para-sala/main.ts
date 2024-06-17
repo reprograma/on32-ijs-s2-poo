@@ -8,7 +8,7 @@ import { ProdutoDigital } from "./produtos/produto_digital"
 console.log("rodando")
 
 
-const produto = new Produto("Regata Laranja", 100, "Regata Laranja M")
+const produto = new Produto("Regata Laranja", 100, "Regata M", "Branco")
 /*const produtoObj: ProdutoInterface = {
     nome: "produto obj",
     descricao: "",
@@ -16,7 +16,7 @@ const produto = new Produto("Regata Laranja", 100, "Regata Laranja M")
     tipo: ProdutoTipoEnum.DIGITAL
 }*/
 
-const produtoDigital = new ProdutoDigital( "Código Limpo", 90, "Abordando as complexidades de um software limpo.")
+const produtoDigital = new ProdutoDigital( "Código Limpo", 90, "Abordando as complexidades de um software limpo.", "Branco")
 const SubregataRosa = new ProdutoVariante("Regata", 110, "Modelo primavera, tamanho G", 'Rosa')
 const Subregatapreta = new ProdutoVariante("Regata", 110, "Modelo rock, tamanho P", 'Preto')
 
@@ -27,6 +27,7 @@ const display = (...produtos: ProdutoInterface[]): void => {
         nome: produto.nome,
         preco: produto.preco,
         descricao: produto.descricao,
+        cor: produto.cor,
         estaDisponivel: produto.estaDisponivel()
         }
     })

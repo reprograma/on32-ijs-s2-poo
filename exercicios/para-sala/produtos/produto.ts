@@ -26,10 +26,12 @@ export class Produto implements ProdutoInterface{
         return this.estoque > 0
     }
     public tipo: ProdutoTipoEnum = ProdutoTipoEnum.FISICO;
-    get descricao(): string{
+    public get descricao(): string{
+        console.log('Classe mãe')
         return this._descricao
     }
-    constructor(public nome: string, public preco: number, protected _descricao: string){}
+
+    constructor(public nome: string, public preco: number, protected _descricao: string, public cor: string){}
 }
 
 
