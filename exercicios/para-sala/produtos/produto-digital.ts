@@ -8,3 +8,8 @@ export class ProdutoDigtal implements ProdutoInterface {
    public tipo: ProdutoTipoEnum = ProdutoTipoEnum.DIGITAL;
    constructor(public nome: string, public preco: number, public descricao: string) {}
 }
+
+/**
+ *   produto
+ *   produto.nome >> produto.nome()  
+ */

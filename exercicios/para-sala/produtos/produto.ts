@@ -32,6 +32,7 @@ export class Produto implements ProdutoInterface {
 
   public tipo: ProdutoTipoEnum = ProdutoTipoEnum.FISICO; 
   public get descricao(): string {
+    console.log('classe mae')
     return this._descricao
   }
   
