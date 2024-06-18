@@ -14,6 +14,7 @@ const produto = new Produto("Regata", 100, "com encapsulamento") //  instancia d
 const subRegataRosa = new ProdutoVariante('Regata', 110, 'modelo privavera-verao', 'rosa')
 const subRegataPreta = new ProdutoVariante('Regata', 110, 'modelo rock', 'preta')
 
+
 const display = (...produtos: ProdutoInterface[]): void => {
   const carrinhoProdutos = produtos.map((produto) => {
     return {
