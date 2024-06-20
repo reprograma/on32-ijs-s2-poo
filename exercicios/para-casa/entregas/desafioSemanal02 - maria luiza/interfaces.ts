@@ -3,7 +3,7 @@ export interface ClienteBanco{
     nome: string;
     endereco: string;
     numeroTelefone: string;
-    valorDeposito: number;
+    rendaMensal: number;
 }
 
 export interface conta{

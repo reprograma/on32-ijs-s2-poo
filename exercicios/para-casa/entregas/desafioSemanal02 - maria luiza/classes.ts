@@ -7,7 +7,7 @@ export class NovoCliente implements ClienteBanco {
         public nome: string,
         public endereco: string,
         public numeroTelefone: string,
-        public valorDeposito: number
+        public rendaMensal: number
     ) {}
 }
 
@@ -41,7 +41,7 @@ export class ContaPoupanca implements conta{
 
 export class banco {
     criarContaCor(cliente:ClienteBanco): ContaCorrente | null {
-        if (cliente.valorDeposito >= 500){
+        if (cliente.rendaMensal >= 500){
             return new ContaCorrente(this.gerarNumeroConta(), 0, cliente);
         } 
         else{
@@ -54,7 +54,7 @@ export class banco {
         return new ContaPoupanca(this.gerarNumeroConta(), 0, cliente);
     }
 
-    
+
     // classe para gerar número de conta
     private gerarNumeroConta(): number {
         return Math.floor(Math.random() * 100000);
