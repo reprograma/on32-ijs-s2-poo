@@ -1,3 +1,4 @@
+import { Carrinho } from "./carrinho/carrinho"
 import { ProdutoTipoEnum } from "./produtos/enums/produto-tipo.enum"
 import { ProdutoInterface } from "./produtos/interfaces/produtos.interface"
 import { Produto } from "./produtos/produto"
@@ -5,7 +6,7 @@ import { ProdutoDigtal } from "./produtos/produto-digital"
 import { ProdutoVariante } from "./produtos/produto-variante"
 
 //exercicios feitos pela profa aqui
-console.log("rondando") 
+console.log("rodando"); 
 
 
 const produtoDigital = new ProdutoDigtal("Codigo Limpo", 90.88, "Abordando as complexides de um software")
@@ -24,17 +25,7 @@ const subRegataPreta = new ProdutoVariante('Regata', 110, 'modelo rock', 'preta'
  * livro
  */
 
-const display = (...produtos: ProdutoInterface[]): void => {
-  const carrinhoProdutos = produtos.map((produto) => {
-    return {
-      nome: produto.nome,
-      preco: produto.preco,
-      descricao: produto.descricao,
-      estaDisponivel: produto.estaDisponivel()
-    }
-  })
-  console.table(carrinhoProdutos)
-}
+const carrinho = new Carrinho ();
 
 // simula no carrinho
 display(produto, produtoDigital, subRegataRosa, subRegataPreta)

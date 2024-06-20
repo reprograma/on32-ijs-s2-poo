@@ -5,9 +5,17 @@ export class Carrinho {
   // quantidade de um produto
   private carrinhoProdutos: CarrinhoProdutoInterface[] 
   display(...produtos: ProdutoInterface[]): void {
+    console.log(produtos)
 
   }
-  // adicionarItem()
+  
+  adicionarItem(produto: ProdutoInterface) {
+    if (produto.estaDisponivel()) {
+      
+    }
+  }
+
+
   // removerItem()
   // pegarValorTotal
 }
