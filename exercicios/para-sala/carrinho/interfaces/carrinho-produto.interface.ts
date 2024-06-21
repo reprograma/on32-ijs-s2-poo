@@ -3,4 +3,5 @@ export class CarrinhoProdutoInterface {
   preco: number
   tipo: any
   descricao: string
+  quantidade: number
 }

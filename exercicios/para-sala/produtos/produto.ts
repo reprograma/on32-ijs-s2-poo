@@ -26,8 +26,8 @@ export class Produto implements ProdutoInterface {
  readonly 
 */
 export class Produto implements ProdutoInterface {
-  public estoque: number = 0;
-  public estaDisponivel(): boolean{
+  estoque: number = 10;
+  public estaDisponivel(): boolean {
     return this.estoque > 0
   }
   tipo: ProdutoTipoEnum = ProdutoTipoEnum.FISICO;
