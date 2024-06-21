@@ -10,6 +10,7 @@ export interface ProdutoInterface {
   descricao: string
   preco: number
   nome: string
-  tipo: ProdutoTipoEnum,
+  tipo: ProdutoTipoEnum
+  estoque: number
   estaDisponivel: () => boolean // ter estoque
 }

@@ -25,7 +25,7 @@ export class Produto implements ProdutoInterface {
  *  readonly 
  */
 export class Produto implements ProdutoInterface {
-  protected estoque: number = 0;
+  estoque: number = 10;
   public estaDisponivel(): boolean {
     return this.estoque > 0
   }

@@ -1,3 +1,4 @@
+import { Carrinho } from "./carrinho/carrinho"
 import { ProdutoTipoEnum } from "./produtos/enums/produto-tipo.enum"
 import { ProdutoInterface } from "./produtos/interfaces/produtos.interface"
 import { Produto } from "./produtos/produto"
@@ -24,17 +25,14 @@ const subRegataPreta = new ProdutoVariante('Regata', 110, 'modelo rock', 'preta'
  * livro
  */
 
-const display = (...produtos: ProdutoInterface[]): void => {
-  const carrinhoProdutos = produtos.map((produto) => {
-    return {
-      nome: produto.nome,
-      preco: produto.preco,
-      descricao: produto.descricao,
-      estaDisponivel: produto.estaDisponivel()
-    }
-  })
-  console.table(carrinhoProdutos)
-}
+const carrinho = new Carrinho()
+
+carrinho.adicionarItem(produto, 1) // 100
+carrinho.adicionarItem(subRegataRosa, 10) // 220
+carrinho.adicionarItem(subRegataRosa, 10) // 220
+carrinho.adicionarItem(subRegataPreta, -1) // 110
+carrinho.adicionarItem(subRegataPreta, 20) // 110
+carrinho.adicionarItem(produtoDigital, 1) // 90.88
 
 // simula no carrinho
-display(produto, produtoDigital, subRegataRosa, subRegataPreta)
+carrinho.display()

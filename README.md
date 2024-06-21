@@ -19,7 +19,7 @@ Entender na pratica de como utilizar os 4 conceitos da orientação a objetos co
 Breve resumo de programação declarativa X imperativa e exemplos praticos de programação e teoria resumida de programação orientada a objetos.
 
 # Conteúdo
-Breve introdução sobre paragmas de programação. 
+Breve introdução sobre padgma de programação. 
 
 ### A Programação Imperativa
 
@@ -195,9 +195,10 @@ Complexidade, implementar o polimorfismo é muito complexo, pq é necessário co
 O encapsulamento pode ser dividido em alguns sub-topicos. 
 
 > Acesso a propriedade
+obj.nome << comportamento = metodo 
 Nesse caso o encapsulamento pode ser utilizado somente para retornar uma propriedade privada que não poderia ser acessada diretamente. 
 
-> Como `getter` `get nome()`
+> Com `getter` `get nome()`
 Nesse caso o encapusulamento pode ser utilizado sobrescrever o comportamento original de um get (acesso a propriedade) podendo manipular aquela informação
 
 > Na confiabilidade de um código
@@ -207,7 +208,8 @@ poderiamos ter um metodo validarPermissao
 Implemtação para um usuario normal
 ```typescript
 auth.estaPermitido(userId: string): boolean { // instancia da classe UserAuth
-
+   // ---
+   mesalide.status == "paga"
   return this.usuario.id === userId
 }
 ```
