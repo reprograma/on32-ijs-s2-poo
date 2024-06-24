@@ -19,7 +19,7 @@ export class NovoCliente implements ClienteBanco {
 export class ContaCorrente implements Conta {
     tipoDeConta: tipoConta = tipoConta.corrente;
     public numeroConta: number;
-    limiteChequeEspecial: number = 100;
+    ChequeEspecial: number = 100;
 
     constructor(
         public saldo: number,
@@ -75,7 +75,7 @@ export class banco {
     }
     
     sacar(conta: Conta, valor: number): string {
-        if (conta.tipoDeConta === tipoConta.corrente && (conta.saldo + (conta as ContaCorrente).limiteChequeEspecial) >= valor) {
+        if (conta.tipoDeConta === tipoConta.corrente && (conta.saldo + (conta as ContaCorrente).ChequeEspecial) >= valor) {
             conta.saldo -= valor;
             return `${conta.titularConta.nome}, seu saque de R$${valor.toFixed(2)} realizado com sucesso. Saldo atual: R$${conta.saldo.toFixed(2)}.`;
         } else if (conta.tipoDeConta === tipoConta.poupanca && conta.saldo >= valor) {
@@ -89,7 +89,7 @@ export class banco {
     transferir(Contaorigem: Conta, Contadestino: Conta, valor: number): string {
         if (Contaorigem.tipoDeConta === tipoConta.corrente) {
             const contaCorrenteOrigem = Contaorigem as ContaCorrente;
-            if ((Contaorigem.saldo + contaCorrenteOrigem.limiteChequeEspecial) >= valor) {
+            if ((Contaorigem.saldo + contaCorrenteOrigem.ChequeEspecial) >= valor) {
                 Contaorigem.saldo -= valor;
                 Contadestino.saldo += valor;
                 return `Transferência de R$${valor.toFixed(2)} feita por
