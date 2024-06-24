@@ -12,7 +12,3 @@ export class ProdutoDigtal implements ProdutoInterface {
    constructor(public nome: string, public preco: number, public descricao: string) {}
 }
 
-/**
- *   produto
- *   produto.nome >> produto.nome()  
- */

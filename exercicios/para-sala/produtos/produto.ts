@@ -16,27 +16,25 @@ export class Produto implements ProdutoInterface {
   }
 }
 */
-/**
- * public -> qualquer um pode acessar filho, ou partir de uma variavel
- * proteced -> somente a classe e suas classes derivadas ( extends ) pode acessar
- * private -> somente a classe pode acessar
- *  private | proteced | public getStatus()
- *  private | proteced | public status
- *  readonly 
- */
+
+/*
+ public => quanquer um pode acessar filho, ou a partir de uma variavel
+ protected => somente a classe e suas classes derivadas (extends) pode acessar
+ private => somente a classe pode acessar
+ private | protected | public getStatus()
+ private | protected | public status
+ readonly 
+*/
 export class Produto implements ProdutoInterface {
   estoque: number = 10;
   public estaDisponivel(): boolean {
     return this.estoque > 0
   }
-
-  public tipo: ProdutoTipoEnum = ProdutoTipoEnum.FISICO; 
-  public get descricao(): string {
-    console.log('classe mae')
+  tipo: ProdutoTipoEnum = ProdutoTipoEnum.FISICO;
+  public get descricao():string {
     return this._descricao
   }
-  
-  // public get descricao: string são equivalentes, incrusive no constructor
+  // public get descricao: string são equivalentes, inclusive no constructor
 
   constructor(public nome: string, public preco: number, protected _descricao: string) {}
  }

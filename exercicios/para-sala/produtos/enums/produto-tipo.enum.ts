@@ -1,4 +1,4 @@
 export enum ProdutoTipoEnum {
-  FISICO = 1,
-  DIGITAL = 2
+    FISICO = 1,
+    DIGITAL = 2
 }

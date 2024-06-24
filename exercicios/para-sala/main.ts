@@ -2,6 +2,7 @@ import { Carrinho } from "./carrinho/carrinho"
 import { ProdutoTipoEnum } from "./produtos/enums/produto-tipo.enum"
 import { ProdutoInterface } from "./produtos/interfaces/produtos.interface"
 import { Produto } from "./produtos/produto"
+
 import { ProdutoDigtal } from "./produtos/produto-digital"
 import { ProdutoVariante } from "./produtos/produto-variante"
 
