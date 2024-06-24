@@ -36,12 +36,15 @@ export class ContaCorrente implements Conta {
 export class ContaPoupanca implements Conta {
     tipoDeConta: tipoConta = tipoConta.poupanca;
     public numeroConta: number;
+    private taxadeJuros: number;
 
     constructor(
         public saldo: number,
-        public titularConta: ClienteBanco
+        public titularConta: ClienteBanco,
+        taxadeJuros: number = 0.03
     ) {
         this.numeroConta = ContaPoupanca.gerarNumeroConta();
+        this.taxadeJuros = taxadeJuros;
     }
 
     private static gerarNumeroConta(): number {
