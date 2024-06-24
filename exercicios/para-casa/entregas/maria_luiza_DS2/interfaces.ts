@@ -13,5 +13,5 @@ export interface Conta{
     numeroConta: number;
     saldo: number;
     titularConta: ClienteBanco;
-    tipo: tipoConta
+    tipoDeConta: tipoConta
 }
