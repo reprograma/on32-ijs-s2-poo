@@ -1,30 +1,43 @@
-//PRODUTO É A CLASSE MÃE
-import { ProdutoTipoEnum } from "./enums/produto-tipo-enum";
-import { ProdutoInterface } from "./interface/produto-interface";
-//puclic qualquer parte do código pode acessar 
-//private só com permissão
+import { ProdutoTipoEnum } from "./enums/produto-tipo.enum";
+import { ProdutoInterface } from "./interfaces/produtos.interface";
 
-//verbosa - insere as informacoes de forma granular
-//abreviada - insere as informacoes direto
-
+// verbosa - insiria as informacoes de forma granular
+// abreviada - insere as informcoes direto
 /*
-* public -> qualquer um pode acessar o filho, ou partir de uma variavel
-* protected -> somente a classe e suas clasees derivadas (extends) pode acessar
-* ptivate -> somente a classe pode acessar 
-* private | protected | public geStatus()
-* private | protected | public status*/
-
 export class Produto implements ProdutoInterface {
-    protected estoque: number = 0;
-    public estaDisponivel(): boolean {
-return this.estoque > 0
-    }
-    public tipo: ProdutoTipoEnum = ProdutoTipoEnum.FISICO
-    public get descricao(): string {
-        return this._descricao
-    }
-    //public get descricao: strings são equivalents, inclusive no constructor
+  nome: string;
+  preco: number;
+  descricao: string;
 
-    constructor(public nome: string, public preco: number, protected _descricao: string){}
+  constructor(nome: string, preco: number, descricao: string) { // new 
+    this.nome = nome
+    this.preco = preco
+    this.descricao = descricao
+  }
 }
+*/
+/**
+ * public -> qualquer um pode acessar filho, ou partir de uma variavel
+ * proteced -> somente a classe e suas classes derivadas ( extends ) pode acessar
+ * private -> somente a classe pode acessar
+ *  private | proteced | public getStatus()
+ *  private | proteced | public status
+ *  readonly 
+ */
+export class Produto implements ProdutoInterface {
+  estoque: number = 10;
+  public estaDisponivel(): boolean {
+    return this.estoque > 0
+  }
+
+  public tipo: ProdutoTipoEnum = ProdutoTipoEnum.FISICO; 
+  public get descricao(): string {
+    console.log('classe mae')
+    return this._descricao
+  }
+  
+  // public get descricao: string são equivalentes, incrusive no constructor
+
+  constructor(public nome: string, public preco: number, protected _descricao: string) {}
+ }
 

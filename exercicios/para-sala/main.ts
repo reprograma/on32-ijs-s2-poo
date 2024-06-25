@@ -1,46 +1,38 @@
-import { Produto } from "./produtos/produto";
-import { ProdutoInterface } from "./produtos/interface/produto-interface";
-import { ProdutoTipoEnum } from "./produtos/enums/produto-tipo-enum";
-import { ProdutoDigital } from "./produtos/produto-digital";
-import { ProdutoVariante } from "./produtos/produto-variante";
+import { Carrinho } from "./carrinho/carrinho"
+import { ProdutoTipoEnum } from "./produtos/enums/produto-tipo.enum"
+import { ProdutoInterface } from "./produtos/interfaces/produtos.interface"
+import { Produto } from "./produtos/produto"
+import { ProdutoDigtal } from "./produtos/produto-digital"
+import { ProdutoVariante } from "./produtos/produto-variante"
 
 //exercicios feitos pela profa aqui
-console.log("rodando");
+console.log("rondando") 
 
-// const produtoObj: ProdutoInterface = {
-//   nome: "produto obj",
-//   descricao: "",
-//   preco: 0,
-//   tipo: ProdutoTipoEnum.DIGITAL,
-// };
 
-const produto = new Produto("regata", 100, "descricao regata M");
+const produtoDigital = new ProdutoDigtal("Codigo Limpo", 90.88, "Abordando as complexides de um software")
 
-const produtoDigital = new ProdutoDigital(
-  "codigo limpo",
-  90.88,
-  "Abordando as complexidades de um software"
-);
+const produto = new Produto("Regata", 100, "com encapsulamento") //  instancia de produto
+const subRegataRosa = new ProdutoVariante('Regata', 110, 'modelo privavera-verao', 'rosa')
+const subRegataPreta = new ProdutoVariante('Regata', 110, 'modelo rock', 'preta')
 
-const regataRosa = new ProdutoVariante(
-  "Regata",
-  110,
-  "modelo primavera-verao",
-  "rosa"
-);
+/**
+ * musicas 1
+ *  -> cantores[] N = varios
+ *  -> compositores[]
+  * cantores 1
+ *  -> musicas[] N = varias
+ *  -> compositores[]
+ * livro
+ */
 
-// o spread operator (...) é usado para "pegar tudo" de um array
-//ou objeto existente e adicionar novos elementos ou propriedades.
-//console.table transforma um array em tabela
-const display = (...produtos: ProdutoInterface[]): void => {
-  const carrinhoProdutos = produtos.map((produto) => {
-    return {
-      nome: produto.nome,
-      preco: produto.preco,
-      descricao: produto.descricao,
-      estaDisponivel: produto.estaDisponivel()
-    };
-  });
-  console.table(carrinhoProdutos);
-};
-display(produto, produtoDigital, regataRosa);
+const carrinho = new Carrinho()
+
+carrinho.adicionarItem(produto, 1) // 100
+carrinho.adicionarItem(subRegataRosa, 10) // 220
+carrinho.adicionarItem(subRegataRosa, 10) // 220
+carrinho.adicionarItem(subRegataPreta, -1) // 110
+carrinho.adicionarItem(subRegataPreta, 20) // 110
+carrinho.adicionarItem(produtoDigital, 1) // 90.88
+
+// simula no carrinho
+carrinho.display()

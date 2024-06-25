@@ -1,10 +1,10 @@
 import { Produto } from "./produto";
 
 export class ProdutoVariante extends Produto {
-  public imagens: string[] = [];
-  public categorias: string[] =['regata'];
+  public imagens: string[] = []; // s3
+  public categorias: string[] = ['regata']
   dimensoes: any = {};
-  estoque: number = 0;
+  
   constructor(
     public nome: string,
     public preco: number,
@@ -13,13 +13,15 @@ export class ProdutoVariante extends Produto {
   ) {
     super(nome, preco, _descricao);
   }
-  //isso é um override = sobreescrita
+
+  // mas sim, isso é um override = sobrecrita
   get descricao(): string {
+    console.log('classe filha')
     return `
-    O produto: ${this.nome}, com a cor ${this.cor} 
-    com os tamanhos x, y, z 
-    categorias ${this.categorias.join(', ')}
-    ${this._descricao}`
+      O produto : ${this.nome},  com a cor ${this.cor} 
+      com os tamnhos x, y,z 
+      categorias ${this.categorias.join(', ')}
+      ${this._descricao}
+    `
   }
 }
-
