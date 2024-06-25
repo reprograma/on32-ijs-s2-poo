@@ -195,11 +195,12 @@ __transferir(Contaorigem: Conta, Contadestino: Conta, valor: number): string{}__
 5. Caso o if __if ((Contaorigem.saldo + contaCorrenteOrigem.ChequeEspecial) >= valor)__ seja verdadeiro, será subtraido o valor de transferência da conta de origem __Contaorigem.saldo -= valor;__ e adicionado o valor na conta de destino __Contadestino.saldo += valor;__. Além disso, retornará uma mensagem de sucesso de transação. Caso if de verificação de valor __if ((Contaorigem.saldo + contaCorrenteOrigem.ChequeEspecial) >= valor)__ seja falso, o else com a mensagem de saldo insuficiente será executado.
 6. Se o if de verificação do tipo de conta for falso, ou seja, a conta de origem da tranferência não é do tipo corrente, o _else if_ verificará se o tipo de conta é poupança e se o saldo é suficiente para a tranferência. Caso o if seja verdadeito será subtraido o valor de transferência da conta de origem __Contaorigem.saldo -= valor;__ e adicionado o valor na conta de destino __Contadestino.saldo += valor;__. Se o resultado for falso, uma mensagem de saldo insuficiente será mostrada ao usuário.
 
+# Melhorias
+* Automatizar a entrada de informações e configurar a interação com os usuários
+
 # Termos para pesquisa
 1. _Type Assertion_ => termo _AS_
 2. Visibilidade de código => _private, public, protected_
 3. Palavra chave _static_
-<<<<<<< HEAD
-3. _Enums_ o que são e para que servem
-=======
->>>>>>> 3949d444fe32a7535ffe20c7800efd6a541e97de
+4. _Enums_
+
