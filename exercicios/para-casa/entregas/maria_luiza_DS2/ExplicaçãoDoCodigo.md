@@ -165,26 +165,26 @@ export class banco {
 ```
 __criarContaCor(cliente:ClienteBanco): Conta | null{}__ 
 1. O parâmetro **cliente:ClienteBanco** define o nome do parâmentro do método "cliente" que recebe as informações criadas a partir do **ClienteBanco** ou seja, as informações do novo cliente.
-2. **: Conta | null{}** fará o retorno do método, onde o valor pode ser o objeto que é a nova conta ou o valor null. Isso significa que, dependendo das condições do método, o retorno pode ser a nova conta ou um valor null.
-3. Condicional: Para criar uma nova conta corrente, é necessário que o cliente tenha **renda mensal >=500**. Isso significa que, se o cliente atender essa espectativa, o if retornará a criação da nova conta utilizando o __return new ContaCorrente(0, cliente);__ e informará ao cliente que a conta foi criada com sucesso utilizando __console.log(`Olá, ${cliente.nome}! Sua conta corrente foi criada com sucesso!`);__
+2. **: Conta | null{}** fará o retorno do método, onde o valor pode ser o objeto que é a nova conta ou o valor null. Isso significa que, dependendo das condições do método, o retorno pode ser a nova conta ou um valor nulo, indicando que a conta não foi criada.
+3. Condicional: Para criar uma nova conta corrente, é necessário que o cliente tenha **renda mensal >= 500**. Isso significa que, se o cliente atender essa espectativa, o if retornará a criação da nova conta utilizando o __return new ContaCorrente(0, cliente);__, adicionando o saldo como "0" e o nome do titular da conta que virá de "cliente". Depois, informará ao cliente que a conta foi criada com sucesso utilizando __console.log(`Olá, ${cliente.nome}! Sua conta corrente foi criada com sucesso!`);__
 4. Caso o cliente *não tenha a renda mensal >= 500*, o else retornará com o valor null e a mensagem __console.log("A renda salarial informada é insuficiente para abrir uma conta corrente.");__ será impressa.
 
 
 __criarContaPop(cliente: ClienteBanco): ContaPoupanca{}__
 1. O parâmentro **cliente: ClienteBanco** define o nome do parâmentro **cliente** que vai receber as informações criadas a partir do **ClienteBanco** ou seja, as informações do cliente.
 2. **: ContaPoupanca** é o retorno do método, onde será o objeto de conta poupança.
-3. A mensagem __console.log(`Olá, ${cliente.nome}! Sua conta poupança foi criada com sucesso! `);__ pegando o nome do cliente através do parâmetro "cliente" que contém as informações do cliente será impressa e o retono __return new ContaPoupanca(0, cliente);__ fará a criação da nova conta poupança e retornará ao programa.
+3. A mensagem __console.log(`Olá, ${cliente.nome}! Sua conta poupança foi criada com sucesso! `);__ pegando o nome do cliente através do parâmetro "cliente" que contém as informações do cliente será impressa e o retono __return new ContaPoupanca(0, cliente);__ fará a criação da nova conta poupança e retornará ao programa, adicionando o saldo e o titular da nova conta.
 
 __depositar(conta: Conta, valor: number): string{}__
-1. O método **depositar()** possui dois parâmentros: **conta**, que receberá as informações da conta que o depósito será feito. O parâmentro recebe as informações do objeto __Conta__, que contém as informações da conta criada e está atrelada ao cliente proprietário. O segundo parâmetro, **valor**, receberá o valor de depósito.
+1. O método **depositar()** possui dois parâmentros: **conta**, que receberá as informações da conta que o depósito será feito, esse parâmentro recebe as informações do objeto __Conta__, que contém as informações da conta criada e está atrelada ao cliente proprietário. O segundo parâmetro, **valor**, receberá o valor de depósito.
 2. **conta.saldo += valor;** pega o saldo atual do cliente e soma com o valor de depósito.
-3. **: string** retornará uma mensagem informando o depósito feito return `Olá, ${conta.titularConta.nome}! Seu saldo atual após depósito é de ${conta.saldo.toFixed(2)}`. Além disso, mostramos o saldo atual que está no parâmentro conta e o formatamos para duas casas decimais utilizando o toFixed(2).
+3. **: string** retornará uma mensagem informando o depósito feito __return `Olá, ${conta.titularConta.nome}! Seu saldo atual após depósito é de ${conta.saldo.toFixed(2)}`__. Além disso, mostramos o saldo atual que está no parâmentro conta e o formatamos para duas casas decimais utilizando o _toFixed(2)_.
 
 __sacar(conta: Conta, valor: number): string{}__
 1. O método **sacar()** possui dois parâmentros: **conta**, que receberá as informações da conta que o depósito será feito. O parâmentro recebe as informações do objeto __Conta__, que contém as informações da conta criada e está atrelada ao cliente proprietário. O segundo parâmetro, **valor**, receberá o valor de saque.
 2. O objetivo do método é verificar qual o tipo de conta que será feito o saque e, a partir dai, realizar a transação. Para realizar a transação, o if deve verificar se a conta é do tipo *corrente* e, caso seja, se o valor de saldo + cheque especial é suficiente para o saque. Se a conta for do tipo *poupança* e o saldo for maior ou igual que o valor de saque, a transação será realizada.
 3. __conta.saldo -= valor;__ fará a subtração de valor caso a conta seja poupança ou corrente. Já que estamos analisando as duas probabilidades utilizando __if e else if__
-4. O método deve retornar uma string. No caso da verificação de conta corrente, caso o usuário esteja sacando desse tipo de conta, a mensagem __return `${conta.titularConta.nome}, seu saque de R$${valor.toFixed(2)} realizado com sucesso. Saldo atual: R$${conta.saldo.toFixed(2)}.`;__ será retornada, informando o valor de saque e o saldo atual de conta, utilizando o toFixed(2) para a formatação em duas casas decimais.
+4. O método deve retornar uma string. No caso da verificação de conta corrente, caso o usuário esteja sacando desse tipo de conta, a mensagem __return `${conta.titularConta.nome}, seu saque de R$${valor.toFixed(2)} realizado com sucesso. Saldo atual: R$${conta.saldo.toFixed(2)}.`;__ será retornada, informando o valor de saque e o saldo atual de conta, utilizando o _toFixed(2)_ para a formatação em duas casas decimais.
 5. O else que fecha o método será iniciado quando as condições do if ou else if não forem atendidas. Ele retorna uma mensagem de saldo insuficiente: __return "Saldo insuficiente.";__
 
 __transferir(Contaorigem: Conta, Contadestino: Conta, valor: number): string{}__
@@ -199,4 +199,7 @@ __transferir(Contaorigem: Conta, Contadestino: Conta, valor: number): string{}__
 1. _Type Assertion_ => termo _AS_
 2. Visibilidade de código => _private, public, protected_
 3. Palavra chave _static_
+<<<<<<< HEAD
 3. _Enums_ o que são e para que servem
+=======
+>>>>>>> 3949d444fe32a7535ffe20c7800efd6a541e97de
