@@ -134,20 +134,20 @@ export class banco {
 
 ```
 __criarContaCor(cliente:ClienteBanco): Conta | null{}__ 
-1. O parâmetro cliente:ClienteBanco define o nome do parâmentro do método "cliente" que recebe as informações criadas a partir do "ClienteBanco" ou seja, as informações do novo cliente.
-2. : Conta | null{} fará o retorno do método, onde o valor pode ser o objeto que é a nova conta ou o valor null. Isso significa que, dependendo das condições do método, o retorno pode ser a nova conta ou um valor null.
-3. Condicional: Para criar uma nova conta corrente, é necessário que o cliente tenha renda mensal >=500. Isso significa que, se o cliente atender essa espectativa, o if retornará a criação da nova conta utilizando o __return new ContaCorrente(0, cliente);__ e informará ao cliente que a conta foi criada com sucesso utilizando __console.log(`Olá, ${cliente.nome}! Sua conta corrente foi criada com sucesso!`);__
-4. Caso o cliente não tenha a renda mensal >= 500, o else retornará com o valor null e a mensagem __console.log("A renda salarial informada é insuficiente para abrir uma conta corrente.");__ será impressa.
+1. O parâmetro **cliente:ClienteBanco** define o nome do parâmentro do método "cliente" que recebe as informações criadas a partir do **ClienteBanco** ou seja, as informações do novo cliente.
+2. **: Conta | null{}** fará o retorno do método, onde o valor pode ser o objeto que é a nova conta ou o valor null. Isso significa que, dependendo das condições do método, o retorno pode ser a nova conta ou um valor null.
+3. Condicional: Para criar uma nova conta corrente, é necessário que o cliente tenha **renda mensal >=500**. Isso significa que, se o cliente atender essa espectativa, o if retornará a criação da nova conta utilizando o __return new ContaCorrente(0, cliente);__ e informará ao cliente que a conta foi criada com sucesso utilizando __console.log(`Olá, ${cliente.nome}! Sua conta corrente foi criada com sucesso!`);__
+4. Caso o cliente *não tenha a renda mensal >= 500*, o else retornará com o valor null e a mensagem __console.log("A renda salarial informada é insuficiente para abrir uma conta corrente.");__ será impressa.
 
 
 __criarContaPop(cliente: ClienteBanco): ContaPoupanca__
-1. O parâmentro cliente: ClienteBanco define o nome do parâmentro "cliente" que vai receber as informações criadas a partir do "ClienteBanco" ou seja, as informações do cliente.
-2. : ContaPoupanca é o retorno do método, onde será o objeto de conta poupança.
-3. A mensagem __ console.log(`Olá, ${cliente.nome}! Sua conta poupança foi criada com sucesso! `);__ pegando o nome do cliente através do parâmetro "cliente" que contém as informações do cliente será impressa e o retono __return new ContaPoupanca(0, cliente);__ fará a criação da nova conta poupança e retornará ao programa.
+1. O parâmentro **cliente: ClienteBanco** define o nome do parâmentro **cliente** que vai receber as informações criadas a partir do **ClienteBanco** ou seja, as informações do cliente.
+2. **: ContaPoupanca** é o retorno do método, onde será o objeto de conta poupança.
+3. A mensagem __console.log(`Olá, ${cliente.nome}! Sua conta poupança foi criada com sucesso! `);__ pegando o nome do cliente através do parâmetro "cliente" que contém as informações do cliente será impressa e o retono __return new ContaPoupanca(0, cliente);__ fará a criação da nova conta poupança e retornará ao programa.
 
 __depositar(conta: Conta, valor: number): string__
-1. O método depositar possui dois parâmentros: conta, que receberá as informações da conta que o depósito será feito. O parâmentro recebe as informações do objeto Conta, que contém as informações da conta criada e está atrelada ao cliente proprietário. O segundo parâmetro, valor, recebrá o valor de depósito.
-2. conta.saldo += valor; pega o saldo atual do cliente e soma com o valor de depósito.
-3. : string retornará uma mensagem informando o depósito feito return `Olá, ${conta.titularConta.nome}! Seu saldo atual após depósito é de ${conta.saldo.toFixed(2)}`. Além disso, mostramos o saldo atual que está no parâmentro conta e o formatamos para duas casas decimais utilizando o toFixed(2).
+1. O método **depositar()** possui dois parâmentros: **conta**, que receberá as informações da conta que o depósito será feito. O parâmentro recebe as informações do objeto __Conta__, que contém as informações da conta criada e está atrelada ao cliente proprietário. O segundo parâmetro, **valor**, receberá o valor de depósito.
+2. **conta.saldo += valor;** pega o saldo atual do cliente e soma com o valor de depósito.
+3. **: string** retornará uma mensagem informando o depósito feito return `Olá, ${conta.titularConta.nome}! Seu saldo atual após depósito é de ${conta.saldo.toFixed(2)}`. Além disso, mostramos o saldo atual que está no parâmentro conta e o formatamos para duas casas decimais utilizando o toFixed(2).
 
 
