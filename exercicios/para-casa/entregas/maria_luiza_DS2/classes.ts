@@ -68,7 +68,7 @@ export class banco {
         return new ContaPoupanca(0, cliente);
     }
 
-    depositar(conta: Conta, valor: number){
+    depositar(conta: Conta, valor: number): string{
         conta.saldo += valor;
         return `Olá, ${conta.titularConta.nome}! Seu saldo atual após depósito é de ${conta.saldo.toFixed(2)}`
     }
@@ -95,7 +95,7 @@ export class banco {
                 ${contaCorrenteOrigem.titularConta.nome} para ${Contadestino.titularConta.nome} foi realizada com sucesso.
                 Saldo atual da conta de origem: R$${Contaorigem.saldo.toFixed(2)}, saldo atual da conta de destino: R$${Contadestino.saldo.toFixed(2)}.`;
             } else {
-                return "Transferência não realizada. Saldo insuficiente na conta de origem.";
+                return `Transferência não realizada. O saldo da conta de ${Contaorigem.titularConta.nome} é R$ ${Contaorigem.saldo.toFixed(2)}. O valor de transferência é insuficiente.`;
             }
         } else if (Contaorigem.tipoDeConta === tipoConta.poupanca && Contaorigem.saldo >= valor) {
             Contaorigem.saldo -= valor;
@@ -104,7 +104,7 @@ export class banco {
             ${Contaorigem.titularConta.nome} para: ${Contadestino.titularConta.nome} foi realizada com sucesso.
             Saldo atual da conta de origem: R$ ${Contaorigem.saldo.toFixed(2)}, saldo atual da conta de destino: R$${Contadestino.saldo.toFixed(2)}.`;
         } else {
-            return "Transferência não realizada. Saldo insuficiente na conta de origem.";
+            return `Transferência não realizada. O saldo da conta de ${Contaorigem.titularConta.nome} é R$ ${Contaorigem.saldo.toFixed(2)}. O valor de transferência é insuficiente.`;
         }
     }
     
