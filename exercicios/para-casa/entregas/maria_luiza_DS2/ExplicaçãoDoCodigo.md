@@ -197,6 +197,8 @@ __transferir(Contaorigem: Conta, Contadestino: Conta, valor: number): string{}__
 
 # Melhorias
 * Automatizar a entrada de informações e configurar a interação com os usuários
+* Adicionar máscara para padronizar informações
+* Armazenar contas criadas
 
 # Termos para pesquisa
 1. _Type Assertion_ => termo _AS_
