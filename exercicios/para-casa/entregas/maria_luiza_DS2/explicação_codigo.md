@@ -86,8 +86,8 @@ export class ContaPoupanca implements Conta {
 As classes __ContaCorrente__ e __ContaPoupanca__ implementam a inferface __conta__.
  
  __ContaCorrente__ e  __ContaPoupanca__
- 1. A classe __ContaCorrente__ armazena em propriedade chamada "tipoDeConta" o valor de "corrente" que está no enum criado. Já a classe __ContaPoupanca__ armazena no "tipoDeConta" o valor de "poupanca" Ou seja, através do enum, definimos "corrente" e "poupança" como 1 e 2, repectivamente, para separarmos os tipos de conta.
- 2. A classe __ContaCorrente__  armazena o valor de cheque especial dentro de uma propriedade chamada "ChequeEspecial".
+ 1. A classe __ContaCorrente__ armazena em propriedade chamada **tipoDeConta** o valor de *corrente* que está no enum criado. Já a classe __ContaPoupanca__ armazena no **tipoDeConta** o valor de *poupanca* Ou seja, através do enum, definimos "corrente" e "poupança" como 1 e 2, repectivamente, para separarmos os tipos de conta.
+ 2. A classe __ContaCorrente__  armazena o valor de cheque especial dentro de uma propriedade chamada **ChequeEspecial**.
  3. __public numeroConta: number__ foi declarado fora do construtor para definir a propriedade de forma explícita.
  4. Parâmentros do construtor: São públicos e serão inicalizados na instancia.
  5. O método __gerarNumeroConta__ é criado como privado e retorna um número que será a sequência numérica da conta do cliente. Dentro do método, um número entre 0 e 99.999 é gerado e arredondado para obter apenas a parte inteira.
