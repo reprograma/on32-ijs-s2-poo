@@ -199,3 +199,4 @@ __transferir(Contaorigem: Conta, Contadestino: Conta, valor: number): string{}__
 1. _Type Assertion_ => termo _AS_
 2. Visibilidade de código => _private, public, protected_
 3. Palavra chave _static_
+3. _Enums_ o que são e para que servem
