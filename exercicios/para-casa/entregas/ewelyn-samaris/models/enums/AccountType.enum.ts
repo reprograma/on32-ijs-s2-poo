@@ -1,0 +1,5 @@
+
+export enum AccountType {
+    SAVING_ACCOUNT = 'SAVING_ACCOUNT',
+    CHECKING_ACCOUNT = 'CHECKING_ACCOUNT'
+}
