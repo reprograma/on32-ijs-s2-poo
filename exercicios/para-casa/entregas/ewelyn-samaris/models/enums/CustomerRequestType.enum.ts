@@ -1,0 +1,5 @@
+
+export enum CustomerRequestType {
+    CHANGE_STATUS = 'CHANGE_STATUS',
+    CREATE_CHECKING_ACCOUNT = 'CREATE_CHECKING_ACCOUNT'
+}
