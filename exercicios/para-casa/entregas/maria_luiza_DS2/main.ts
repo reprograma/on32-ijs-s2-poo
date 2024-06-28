@@ -1,7 +1,5 @@
 
-import { ClienteBanco, Conta } from "./interfaces";
-import { tipoConta } from "./tipo-conta-enum";
-import { NovoCliente, banco, ContaPoupanca, ContaCorrente} from "./classes";
+import { NovoCliente, banco} from "./classes";
 
 const iniciarBanco = new banco();
 
